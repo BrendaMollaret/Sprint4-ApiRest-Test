@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 public interface ArticuloManufacturadoRepository extends BaseRepository<ArticuloManufacturado,Long>{
 
     //query
+    //busqueda de productos que coincidan con el nombre
     @Query(
             value = "SELECT * FROM articulo_manufacturado WHERE articulo_manufacturado.nombre_articulo_manufacturado LIKE %:filtro%",
             nativeQuery = true
@@ -22,6 +23,7 @@ public interface ArticuloManufacturadoRepository extends BaseRepository<Articulo
             Pageable pageable
     );
 
+    //busqueda de productos por el precio de venta
     @Query(
             value = "SELECT * FROM articulo_manufacturado WHERE articulo_manufacturado.precio_venta LIKE %:precioVenta%",
             nativeQuery = true
@@ -31,6 +33,7 @@ public interface ArticuloManufacturadoRepository extends BaseRepository<Articulo
             Pageable pageable
     );
 
+    //busqueda de precios por un rango de precios
     @Query(
             value = "SELECT * FROM articulo_manufacturado " +
                     "WHERE articulo_manufacturado.precio_venta BETWEEN :precioMinimo AND :precioMaximo",
@@ -42,6 +45,7 @@ public interface ArticuloManufacturadoRepository extends BaseRepository<Articulo
             Pageable pageable
     );
 
+    //busqueda de productos por categoria
     @Query(value = "SELECT am FROM ArticuloManufacturado am JOIN am.categoriaArticuloManufacturado c WHERE c.nombreCategoriaArticuloManufacturado LIKE %:nombreCategoria%")
     Page<ArticuloManufacturado> searchByCategoriaNombre(
             @Param("nombreCategoria") String nombreCategoria,

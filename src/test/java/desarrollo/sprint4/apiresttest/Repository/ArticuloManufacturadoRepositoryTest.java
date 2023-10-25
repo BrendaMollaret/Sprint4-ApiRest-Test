@@ -35,4 +35,3 @@ public class ArticuloManufacturadoRepositoryTest {
         assertEquals(listaEnviada, articuloManufacturadoRepository.searchByNombre("Hamburguesa", PageRequest.of(0, 1)));
     }
 }
-//hasdhsadk
