@@ -1,5 +1,6 @@
 package desarrollo.sprint4.apiresttest.Entity;
 
+import desarrollo.sprint4.apiresttest.Enumeration.Rol;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,6 +15,18 @@ import java.time.LocalDate;
 @Builder
 public class Usuario extends BaseEntity{
 
+    @Column(name = "auth0id")
+    private String auth0Id;
+
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "rol")
+    private Rol rol;
+
     @Column(name = "fecha_alta_usuario")
     private LocalDate fechaAltaUsuario;
 
@@ -23,11 +36,6 @@ public class Usuario extends BaseEntity{
     @Column(name = "fecha_modificacion_usuario")
     private LocalDate fechaModificacionUsuario;
 
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "auth0id")
-    private String auth0Id;
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id")
