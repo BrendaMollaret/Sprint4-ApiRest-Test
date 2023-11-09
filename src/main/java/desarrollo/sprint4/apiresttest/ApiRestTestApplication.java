@@ -147,12 +147,12 @@ public class ApiRestTestApplication {
 
             Rubro rubroVerduleria = Rubro.builder()
                     .nombreRubro("Verduleria")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             Rubro rubroVerdura = Rubro.builder()
                     .nombreRubro("Verdura")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             rubroVerdura.setRubroPadre(rubroVerduleria);
@@ -161,12 +161,12 @@ public class ApiRestTestApplication {
 
             Rubro rubroFiambreria = Rubro.builder()
                     .nombreRubro("Fiambreria")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             Rubro rubroQueso = Rubro.builder()
                     .nombreRubro("Queso")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
 
@@ -175,12 +175,12 @@ public class ApiRestTestApplication {
 
             Rubro rubroCarne = Rubro.builder()
                     .nombreRubro("Carne")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             Rubro rubroVacuna = Rubro.builder()
                     .nombreRubro("Vacuna")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             rubroVacuna.setRubroPadre(rubroCarne);
@@ -190,17 +190,17 @@ public class ApiRestTestApplication {
 
             Rubro rubroBebida = Rubro.builder()
                     .nombreRubro("Bebida")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             Rubro rubroConGas = Rubro.builder()
                     .nombreRubro("Con gas")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             Rubro rubroSinGas = Rubro.builder()
                     .nombreRubro("Sin gas")
-                    .fechaAltaProducto(LocalDate.now())
+                    .fechaAltaRubro(LocalDate.now())
                     .build();
 
             rubroBebida.agregarRubroHijo(rubroConGas);
